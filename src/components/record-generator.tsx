@@ -99,7 +99,13 @@ export function RecordGenerator({ initialDomain = "" }: RecordGeneratorProps) {
 
         <div className="output-note"><ShieldCheck size={18} aria-hidden="true" /><p>Before publishing, make sure DMARC is enforced at quarantine or reject for 100% of mail.</p></div>
 
-        <Link className={`button button--primary button--wide${!complete ? " is-disabled" : ""}`} aria-disabled={!complete} href={complete ? `/check?domain=${encodeURIComponent(normalizedDomain)}&selector=${encodeURIComponent(selector)}` : "#generator-domain"}>
+        <Link
+          className={`button button--primary button--wide${!complete ? " is-disabled" : ""}`}
+          aria-disabled={!complete}
+          tabIndex={complete ? undefined : -1}
+          href={complete ? `/check?domain=${encodeURIComponent(normalizedDomain)}&selector=${encodeURIComponent(selector)}` : "#generator-domain"}
+          onClick={(event) => { if (!complete) event.preventDefault(); }}
+        >
           Check published setup <ArrowRight size={17} aria-hidden="true" />
         </Link>
       </aside>

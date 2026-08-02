@@ -103,7 +103,8 @@ export function SetupWizard({ initialDomain = "", initialSelector = "default" }:
   function openStep(next: number) {
     setStep(next);
     setFurthestStep((current) => Math.max(current, next));
-    window.requestAnimationFrame(() => document.querySelector(".setup-workspace")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    window.requestAnimationFrame(() => document.querySelector(".setup-workspace")?.scrollIntoView({ behavior, block: "start" }));
   }
 
   async function runDomainCheck(event?: FormEvent<HTMLFormElement>) {
@@ -216,13 +217,17 @@ export function SetupWizard({ initialDomain = "", initialSelector = "default" }:
     <div className="setup-shell">
       <nav className="setup-progress" aria-label="Setup progress">
         <p className="setup-progress-label">Your setup path</p>
+        <div className="setup-mobile-progress-copy" aria-live="polite">
+          <span>Step {step + 1} of {steps.length}</span>
+          <strong>{steps[step].short}: {steps[step].title}</strong>
+        </div>
         <ol>
           {steps.map((item, index) => {
             const available = index <= furthestStep;
             const complete = index < step || furthestStep > index;
             return (
               <li key={item.short} className={index === step ? "is-current" : complete ? "is-complete" : ""}>
-                <button type="button" disabled={!available} onClick={() => setStep(index)} aria-current={index === step ? "step" : undefined}>
+                <button type="button" disabled={!available} onClick={() => openStep(index)} aria-current={index === step ? "step" : undefined} aria-label={`${index === step ? "Current step" : complete ? "Completed step" : "Step"} ${index + 1}: ${item.title}`}>
                   <span>{complete ? <Check size={14} aria-hidden="true" /> : index + 1}</span>
                   <div><strong>{item.short}</strong><small>{item.title}</small></div>
                 </button>
