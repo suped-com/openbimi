@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
 
       <div style={{ display: "flex", flexDirection: "column", width: 610, padding: "70px 0 58px 62px" }}>
         <div style={{ display: "flex", alignItems: "center", color: "#3148d8" }}>
-          <BrandMark style={{ width: 96, height: 76 }} />
+          <BrandMark style={{ width: 76, height: 76 }} />
           <div style={{ marginLeft: 18, color: "#151819", fontSize: 51, fontWeight: 800, letterSpacing: -2 }}>OpenBIMI</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", marginTop: 42, fontSize: 88, lineHeight: 0.98, fontWeight: 850, letterSpacing: -5 }}>
@@ -54,7 +54,7 @@ export default function OpenGraphImage() {
           <div style={{ display: "flex", flexDirection: "column", width: 360 }}>
             <div style={{ display: "flex", alignItems: "center", height: 82 }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 72, height: 72, border: "2px solid #f2cf62", borderRadius: 36, background: "#fffdf8", color: "#3148d8" }}>
-                <BrandMark style={{ width: 56, height: 45 }} />
+                <BrandMark style={{ width: 50, height: 50 }} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", marginLeft: 18 }}>
                 <span style={{ width: 126, height: 15, borderRadius: 8, background: "#aaa9ae" }} />

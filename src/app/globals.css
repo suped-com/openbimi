@@ -51,7 +51,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .site-header { position: relative; z-index: 100; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--canvas) 94%, transparent); backdrop-filter: blur(18px); }
 .header-inner { display: flex; min-height: 5rem; align-items: center; gap: 2rem; }
 .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 0.58rem; font-weight: 800; letter-spacing: -0.045em; }
-.brand-mark { display: grid; width: 2.5rem; height: 2rem; place-items: center; color: var(--blue); }
+.brand-mark { display: grid; width: 2.12rem; height: 2.12rem; place-items: center; color: var(--blue); }
 .brand-mark svg { display: block; width: 100%; height: 100%; }
 .brand-name { font-size: 1.28rem; }
 .brand--inverse { color: white; }
