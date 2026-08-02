@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --blue: #3148d8;
+  --ink: #151819;
+  --butter: #f2eeb8;
+  --canvas: #faf8f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  padding: 0 clamp(1.25rem, 4vw, 4rem);
+}
+
+.site-header,
+footer {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+}
+
+.wordmark {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.045em;
+}
+
+.github-link {
+  border-bottom: 1px solid currentColor;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.hero {
+  display: flex;
+  width: min(64rem, 100%);
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(4rem, 12vw, 10rem) 0;
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(4rem, 10vw, 8.75rem);
+  font-weight: 750;
+  letter-spacing: -0.075em;
+  line-height: 0.87;
+}
+
+h1 span {
+  color: var(--blue);
+}
+
+.lede {
+  max-width: 42rem;
+  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+  letter-spacing: -0.025em;
+  line-height: 1.45;
+}
+
+.status {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 2rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  background: var(--butter);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.status span {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--blue);
+}
+
+footer {
+  min-height: 4.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  border-bottom: 0;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 40rem) {
+  .site-header {
+    min-height: 4.5rem;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+}
