@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
       <div style={{ position: "absolute", width: 390, height: 390, right: 100, top: 118, border: "2px solid #f2d77e", borderRadius: 195, opacity: 0.7 }} />
 
       <div style={{ display: "flex", flexDirection: "column", width: 610, padding: "70px 0 58px 62px" }}>
-        <div style={{ display: "flex", alignItems: "center", color: "#3148d8" }}>
+        <div style={{ display: "flex", alignItems: "center", color: "#1f49ca" }}>
           <BrandMark style={{ width: 76, height: 76 }} />
           <div style={{ marginLeft: 18, color: "#151819", fontSize: 51, fontWeight: 800, letterSpacing: -2 }}>OpenBIMI</div>
         </div>
@@ -39,7 +39,7 @@ export default function OpenGraphImage() {
           <span>brand in</span>
           <span>the inbox<span style={{ color: "#ff6c3b" }}>.</span></span>
         </div>
-        <div style={{ display: "flex", marginTop: 30, color: "#3148d8", fontSize: 28, fontWeight: 700 }}>
+        <div style={{ display: "flex", marginTop: 30, color: "#1f49ca", fontSize: 28, fontWeight: 700 }}>
           Free <span style={{ margin: "0 13px", color: "#ff6c3b" }}>•</span> Open source <span style={{ margin: "0 13px", color: "#ff6c3b" }}>•</span> No account
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", flex: 1, padding: "22px 22px 20px" }}>
           <div style={{ display: "flex", flexDirection: "column", width: 360 }}>
             <div style={{ display: "flex", alignItems: "center", height: 82 }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 72, height: 72, border: "2px solid #f2cf62", borderRadius: 36, background: "#fffdf8", color: "#3148d8" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 72, height: 72, border: "2px solid #f2cf62", borderRadius: 36, background: "#fffdf8", color: "#1f49ca" }}>
                 <BrandMark style={{ width: 50, height: 50 }} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", marginLeft: 18 }}>

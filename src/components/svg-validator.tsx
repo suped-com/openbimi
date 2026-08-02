@@ -17,7 +17,7 @@ const sampleSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="96" height="96" viewBox="0 0 96 96" version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg">
   <title>Example brand</title>
   <desc>A blue circle containing the letter B</desc>
-  <rect width="96" height="96" rx="48" fill="#3148d8"/>
+  <rect width="96" height="96" rx="48" fill="#1f49ca"/>
   <path fill="#fff" d="M31 20h20c13 0 21 6 21 17 0 6-3 11-8 14 7 3 11 9 11 17 0 13-9 20-24 20H31V20zm17 27c7 0 11-3 11-8s-4-8-11-8h-4v16h4zm2 30c8 0 12-3 12-10 0-6-4-9-12-9h-6v19h6z"/>
 </svg>`;
 
