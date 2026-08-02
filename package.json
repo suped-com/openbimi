@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "fast-xml-parser": "^5.10.1",
+    "imagetracerjs": "^1.2.6",
     "lucide-react": "^1.28.0",
     "next": "16.2.12",
     "react": "19.2.4",

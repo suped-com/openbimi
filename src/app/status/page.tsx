@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+import { CheckCircle2, Clock3, Construction, Server } from "lucide-react";
+import { InfoPage } from "@/components/info-page";
+
+export const metadata: Metadata = { title: "Service status", description: "Current OpenBIMI feature availability and operational scope." };
+
+export default function StatusPage() {
+  return <InfoPage eyebrow="Service status" title={<>Anonymous tools are <em>available.</em></>} intro="This page reports product capability, not a synthetic uptime SLA. OpenBIMI’s managed-hosting and monitoring service has not opened yet." updated="2 August 2026">
+    <section><h2>Current components</h2><div className="status-list"><div><CheckCircle2 aria-hidden="true" /><span><strong>Website and guides</strong>Available</span><small>Static pages delivered through Vercel</small></div><div><CheckCircle2 aria-hidden="true" /><span><strong>Public domain checker</strong>Available</span><small>Live DNS and bounded HTTPS checks</small></div><div><CheckCircle2 aria-hidden="true" /><span><strong>Local logo and header tools</strong>Available</span><small>Runs in the visitor’s browser</small></div><div><Construction aria-hidden="true" /><span><strong>Managed asset hosting</strong>Not launched</span><small>Planned for Managed Beta</small></div><div><Construction aria-hidden="true" /><span><strong>Daily monitoring and alerts</strong>Not launched</span><small>Planned for Managed Beta</small></div></div></section>
+    <section><h2>What is monitored today</h2><p>Vercel provides platform-level deployment and runtime observability to project maintainers. There is not yet a public automated status feed, incident history, or uptime commitment.</p><div className="info-card-grid info-card-grid--three"><div className="info-card"><Server aria-hidden="true" /><h3>Bounded checks</h3><p>Remote requests use timeouts, size limits, redirect limits, and public-address validation.</p></div><div className="info-card"><Clock3 aria-hidden="true" /><h3>Fresh results</h3><p>The checker queries current public configuration. It does not show a stored historical report.</p></div><div className="info-card"><Construction aria-hidden="true" /><h3>Alpha status</h3><p>Features and result formats can change while the anonymous toolset is completed.</p></div></div></section>
+    <section className="info-callout"><div><h2>Something looks broken?</h2><p>Report reproducible service problems in the public issue tracker. Do not post sensitive headers or security findings there.</p></div><a className="button button--dark" href="https://github.com/suped-com/openbimi/issues/new" target="_blank" rel="noreferrer">Report an issue</a></section>
+  </InfoPage>;
+}

@@ -3,7 +3,11 @@ import { guides } from "@/content/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://openbimi.com";
-  const staticRoutes = ["", "/check", "/tools/svg-validator", "/tools/record-generator", "/guides"];
+  const staticRoutes = [
+    "", "/setup", "/check", "/tools/logo", "/tools/record", "/tools/headers",
+    "/tools/svg-validator", "/tools/record-generator", "/providers", "/learn", "/guides",
+    "/open", "/status", "/costs", "/privacy", "/terms", "/security",
+  ];
   return [
     ...staticRoutes.map((route) => ({ url: `${base}${route}`, changeFrequency: "weekly" as const, priority: route === "" ? 1 : 0.8 })),
     ...guides.map((guide) => ({ url: `${base}/guides/${guide.slug}`, changeFrequency: "monthly" as const, priority: 0.7 })),

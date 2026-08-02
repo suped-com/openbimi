@@ -73,7 +73,7 @@ function ResultSection({ section }: { section: CheckSection }) {
 function CheckResults({ result }: { result: DomainCheckResult }) {
   const readinessLabel = result.readiness === "ready" ? "Ready for broad support" : result.readiness === "technical" ? "Core setup is valid" : "Setup needs work";
   const overallTone: CheckTone = result.readiness === "ready" ? "pass" : result.readiness === "technical" ? "warning" : "fail";
-  const shareUrl = `https://openbimi.com/check?domain=${encodeURIComponent(result.domain)}${result.selector !== "default" ? `&selector=${encodeURIComponent(result.selector)}` : ""}`;
+  const shareUrl = `https://openbimi.com/check/${encodeURIComponent(result.domain)}${result.selector !== "default" ? `?selector=${encodeURIComponent(result.selector)}` : ""}`;
 
   return (
     <div className="checker-results" aria-live="polite">
@@ -148,10 +148,10 @@ function CheckResults({ result }: { result: DomainCheckResult }) {
       <div className="result-actions">
         <div>
           <strong>Next step</strong>
-          <p>{result.readiness === "needs-work" ? "Use the generator to prepare a corrected BIMI record." : "Recheck after any DNS change; propagation may take up to 48 hours."}</p>
+          <p>{result.readiness === "needs-work" ? "Continue in the guided setup flow to fix each requirement in order." : "Recheck after any DNS change; propagation may take up to 48 hours."}</p>
         </div>
-        <Link className="button button--dark" href={`/tools/record-generator?domain=${encodeURIComponent(result.domain)}`}>
-          Open record generator <ArrowRight size={16} aria-hidden="true" />
+        <Link className="button button--dark" href={`/setup?domain=${encodeURIComponent(result.domain)}${result.selector !== "default" ? `&selector=${encodeURIComponent(result.selector)}` : ""}`}>
+          Continue setup <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>
       <p className="check-disclaimer">OpenBIMI checks public configuration, not sending reputation or per-message authentication. A passing result cannot guarantee display in every inbox.</p>

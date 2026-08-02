@@ -12,13 +12,16 @@ export function SiteFooter() {
         </div>
         <div className="footer-column">
           <p className="footer-label">Tools</p>
+          <Link href="/setup">Setup wizard</Link>
           <Link href="/check">Domain checker</Link>
-          <Link href="/tools/svg-validator">SVG validator</Link>
-          <Link href="/tools/record-generator">Record generator</Link>
+          <Link href="/tools/logo">Logo converter</Link>
+          <Link href="/tools/record">Record builder</Link>
+          <Link href="/tools/headers">Header inspector</Link>
         </div>
         <div className="footer-column">
           <p className="footer-label">Learn</p>
-          <Link href="/guides">BIMI guides</Link>
+          <Link href="/learn">BIMI guides</Link>
+          <Link href="/providers">Provider matrix</Link>
           <a href="https://bimigroup.org/implementation-guide/" target="_blank" rel="noreferrer">
             BIMI Group <ArrowUpRight size={13} aria-hidden="true" />
           </a>
@@ -33,11 +36,14 @@ export function SiteFooter() {
           </a>
           <a href="https://github.com/suped-com/openbimi/discussions">Discussions</a>
           <a href="https://github.com/suped-com/openbimi/blob/main/LICENSE">Apache 2.0 license</a>
+          <Link href="/open">Open project</Link>
+          <Link href="/status">Status</Link>
+          <Link href="/costs">Costs</Link>
         </div>
       </div>
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} OpenBIMI contributors</span>
-        <span>Independent project · Not affiliated with the BIMI Group</span>
+        <span className="footer-legal"><Link href="/privacy">Privacy policy</Link><Link href="/terms">Terms and conditions</Link><Link href="/security">Security</Link></span>
       </div>
     </footer>
   );

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { StatusIcon } from "@/components/status-icon";
 import { fixSvgMetadata, validateSvg } from "@/lib/svg";
+import { traceRasterFile } from "@/lib/raster";
 import type { SvgReport } from "@/lib/types";
 
 const sampleSvg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -31,6 +32,9 @@ export function SvgValidator() {
   const [brandName, setBrandName] = useState("");
   const [report, setReport] = useState<SvgReport | null>(null);
   const [dragging, setDragging] = useState(false);
+  const [processing, setProcessing] = useState(false);
+  const [wasTraced, setWasTraced] = useState(false);
+  const [traceApproved, setTraceApproved] = useState(false);
   const [previewUrl, setPreviewUrl] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const previewUrlRef = useRef("");
@@ -51,13 +55,13 @@ export function SvgValidator() {
     setReport(validateSvg(nextSource));
   }
 
-  function readFile(file?: File) {
+  async function readFile(file?: File) {
     if (!file) return;
-    if (!file.name.toLowerCase().endsWith(".svg") && file.type !== "image/svg+xml") {
+    if (file.size > 10 * 1024 * 1024) {
       setReport({
         valid: false,
         compatible: false,
-        issues: [{ code: "file-type", tone: "fail", title: "Choose an SVG file", detail: "BIMI does not support PNG, JPEG, PDF, or AI files." }],
+        issues: [{ code: "file-size", tone: "fail", title: "Choose a file under 10 MB", detail: "Large source files are not processed in the browser." }],
         stats: { bytes: file.size, title: null, viewBox: null, width: null, height: null },
       });
       if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
@@ -67,19 +71,34 @@ export function SvgValidator() {
       setFilename(file.name);
       return;
     }
-    const reader = new FileReader();
-    reader.onload = () => inspect(String(reader.result ?? ""), file.name);
-    reader.readAsText(file);
+    const isSvg = file.type === "image/svg+xml" || file.name.toLowerCase().endsWith(".svg");
+    const isRaster = ["image/png", "image/jpeg", "image/webp"].includes(file.type);
+    if (!isSvg && !isRaster) {
+      setReport({ valid: false, compatible: false, issues: [{ code: "file-type", tone: "fail", title: "Unsupported file type", detail: "Choose an SVG, PNG, JPEG, or WebP file." }], stats: { bytes: file.size, title: null, viewBox: null, width: null, height: null } });
+      return;
+    }
+    setProcessing(true);
+    setTraceApproved(false);
+    try {
+      const nextSource = isSvg ? await file.text() : fixSvgMetadata(await traceRasterFile(file), brandName || "Brand logo");
+      setWasTraced(!isSvg);
+      inspect(nextSource, isSvg ? file.name : `${file.name.replace(/\.[^.]+$/, "")}-bimi.svg`);
+    } catch (error) {
+      setReport({ valid: false, compatible: false, issues: [{ code: "processing", tone: "fail", title: "The logo could not be processed", detail: error instanceof Error ? error.message : "Try a different source file." }], stats: { bytes: file.size, title: null, viewBox: null, width: null, height: null } });
+    } finally {
+      setProcessing(false);
+    }
   }
 
   function onInput(event: ChangeEvent<HTMLInputElement>) {
-    readFile(event.target.files?.[0]);
+    void readFile(event.target.files?.[0]);
+    event.target.value = "";
   }
 
   function onDrop(event: DragEvent<HTMLDivElement>) {
     event.preventDefault();
     setDragging(false);
-    readFile(event.dataTransfer.files?.[0]);
+    void readFile(event.dataTransfer.files?.[0]);
   }
 
   function applyFixes() {
@@ -107,15 +126,15 @@ export function SvgValidator() {
         onDragOver={(event) => event.preventDefault()}
         onDrop={onDrop}
       >
-        <input ref={inputRef} type="file" accept=".svg,image/svg+xml" onChange={onInput} hidden />
+        <input ref={inputRef} type="file" accept=".svg,image/svg+xml,image/png,image/jpeg,image/webp" onChange={onInput} hidden />
         <div className="drop-icon"><Upload size={25} aria-hidden="true" /></div>
-        <h2>Drop your logo SVG here</h2>
-        <p>Validation happens locally in your browser. Your artwork is never uploaded.</p>
+        <h2>{processing ? "Preparing your logo…" : "Drop your logo artwork here"}</h2>
+        <p>Use SVG, PNG, JPEG, or WebP up to 10 MB. Validation and raster tracing happen locally in your browser.</p>
         <div className="drop-actions">
           <button className="button button--primary" type="button" onClick={() => inputRef.current?.click()}>
-            Choose SVG
+            Choose file
           </button>
-          <button className="button button--quiet" type="button" onClick={() => inspect(sampleSvg, "example-bimi.svg")}>
+          <button className="button button--quiet" type="button" onClick={() => { setWasTraced(false); setTraceApproved(false); inspect(sampleSvg, "example-bimi.svg"); }}>
             Try an example
           </button>
         </div>
@@ -186,7 +205,7 @@ export function SvgValidator() {
                 </button>
               )}
               {source && (
-                <button className="button button--dark" type="button" onClick={download}>
+                <button className="button button--dark" type="button" onClick={download} disabled={wasTraced && !traceApproved}>
                   <Download size={17} aria-hidden="true" /> Download SVG
                 </button>
               )}
@@ -194,6 +213,7 @@ export function SvgValidator() {
                 <RefreshCw size={16} aria-hidden="true" /> Choose another
               </button>
             </div>
+            {wasTraced && <label className="setup-approval"><input type="checkbox" checked={traceApproved} onChange={(event) => setTraceApproved(event.target.checked)} /><span><strong>I visually approve this automatic trace</strong>Curves, counters, colours, and important detail still match the intended brand artwork.</span></label>}
             {fixable && <p>Automatic fixes only update safe metadata. Unsupported artwork, scripts, raster images, and external references must be removed in your design tool.</p>}
           </div>
         </div>

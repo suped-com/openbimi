@@ -3,10 +3,11 @@ import { Code2, Menu } from "lucide-react";
 import { Brand } from "@/components/brand";
 
 const links = [
+  { href: "/setup", label: "Setup" },
   { href: "/check", label: "Check a domain" },
-  { href: "/tools/svg-validator", label: "SVG validator" },
-  { href: "/tools/record-generator", label: "Record generator" },
-  { href: "/guides", label: "Guides" },
+  { href: "/tools/logo", label: "Logo tool" },
+  { href: "/providers", label: "Providers" },
+  { href: "/learn", label: "Learn" },
 ];
 
 export function SiteHeader() {

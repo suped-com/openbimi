@@ -31,6 +31,7 @@ export default function Home() {
             <p className="eyebrow"><span /> Free · Open source · Private by design</p>
             <h1>Put your brand <em>in the inbox.</em></h1>
             <p className="hero-lede">Set up BIMI with clear, independent tools that check every public requirement—without an account, a sales call, or a black box.</p>
+            <div className="hero-actions"><Link className="button button--dark" href="/setup">Start guided setup <ArrowRight size={17} aria-hidden="true" /></Link><Link className="text-link" href="/check">Or check an existing setup</Link></div>
             <div className="hero-points">
               <span><CheckCircle2 size={16} aria-hidden="true" /> Live DNS and logo checks</span>
               <span><CheckCircle2 size={16} aria-hidden="true" /> Exact records to publish</span>
@@ -68,13 +69,13 @@ export default function Home() {
               <span className="tool-link">Check a domain <ArrowRight size={16} aria-hidden="true" /></span>
               <div className="mini-dns-card" aria-hidden="true"><span><i /> DMARC enforced</span><span><i /> BIMI record found</span><span><i /> SVG Tiny PS valid</span></div>
             </Link>
-            <Link className="tool-card tool-card--butter" href="/tools/svg-validator">
+            <Link className="tool-card tool-card--butter" href="/tools/logo">
               <span className="tool-number">02</span><div className="tool-icon"><FileCode2 aria-hidden="true" /></div>
               <h3>SVG validator</h3><p>Inspect your logo locally for Tiny PS structure, unsafe content, file size, and inbox compatibility.</p>
               <span className="tool-link">Validate a logo <ArrowRight size={16} aria-hidden="true" /></span>
               <div className="mini-logo-card" aria-hidden="true"><div className="mini-brand-mark"><BrandMark /></div><span>tiny-ps</span><span>32 KB max</span></div>
             </Link>
-            <Link className="tool-card tool-card--coral" href="/tools/record-generator">
+            <Link className="tool-card tool-card--coral" href="/tools/record">
               <span className="tool-number">03</span><div className="tool-icon"><Sparkles aria-hidden="true" /></div>
               <h3>Record generator</h3><p>Build a correct TXT name and value, then copy both into any DNS provider.</p>
               <span className="tool-link">Build your record <ArrowRight size={16} aria-hidden="true" /></span>
@@ -90,7 +91,7 @@ export default function Home() {
             <p className="eyebrow eyebrow--light"><span /> The whole path</p>
             <h2>Four steps.<br /><em>No mystery.</em></h2>
             <p>BIMI sits on top of healthy email authentication. OpenBIMI shows what is public, what is missing, and what still needs a human decision.</p>
-            <Link className="button button--light" href="/guides/bimi-setup">Read the complete guide <ArrowRight size={16} aria-hidden="true" /></Link>
+            <Link className="button button--light" href="/setup">Start guided setup <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
           <ol className="steps-list">
             <li><span>1</span><div><div className="step-icon"><LockKeyhole aria-hidden="true" /></div><h3>Enforce DMARC</h3><p>Authenticate legitimate mail and move the policy to quarantine or reject at full coverage.</p></div></li>
@@ -123,7 +124,7 @@ export default function Home() {
       </section>
 
       <section className="final-cta">
-        <div className="container final-cta-inner"><div><p>Ready when you are.</p><h2>Start with the domain you send from.</h2></div><Link className="button button--light" href="/check">Run the free check <ArrowRight size={17} aria-hidden="true" /></Link></div>
+        <div className="container final-cta-inner"><div><p>Ready when you are.</p><h2>Start with the domain you send from.</h2></div><Link className="button button--light" href="/setup">Open the setup wizard <ArrowRight size={17} aria-hidden="true" /></Link></div>
       </section>
     </main>
   );
