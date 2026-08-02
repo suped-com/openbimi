@@ -2,6 +2,9 @@
 
 Free, open tools to set up, validate, and understand BIMI without an account.
 
+- Production: [openbimi.com](https://openbimi.com)
+- Repository: [suped-com/openbimi](https://github.com/suped-com/openbimi)
+
 ## Local development
 
 ```bash
