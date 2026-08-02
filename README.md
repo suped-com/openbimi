@@ -6,18 +6,17 @@
 
 OpenBIMI is a free, open-source way to set up, validate, and understand Brand Indicators for Message Identification (BIMI)—without an account or a paid setup tool.
 
-> **Project status:** Early development. The application scaffold and production infrastructure are live; the setup and validation tools are being built in public.
+> **Project status:** V1 is live at [openbimi.com](https://openbimi.com). The BIMI specification remains an active Internet-Draft, so validation rules and provider guidance will continue to evolve.
 
-## What we are building
+## What is included
 
-OpenBIMI will help domain owners move from “What is BIMI?” to a valid, testable configuration:
+OpenBIMI helps domain owners move from “What is BIMI?” to a valid, testable configuration:
 
-- inspect BIMI, DMARC, and related DNS records;
-- explain prerequisites and provider-specific limitations in plain language;
-- validate logos against BIMI's SVG requirements;
-- generate records with copy-and-paste instructions;
-- guide users through setup without storing credentials or requiring an account; and
-- provide open documentation that remains useful even if the hosted service disappears.
+- **Domain checker:** inspects DMARC enforcement, BIMI DNS, the hosted SVG, and mark certificate availability.
+- **SVG validator:** checks SVG Tiny PS requirements locally and safely repairs common metadata problems.
+- **Record generator:** produces the exact TXT host and value for any DNS provider.
+- **Setup guides:** explains DMARC, BIMI records, SVG requirements, VMCs, and CMCs using primary sources.
+- **Shareable reports:** creates a direct URL for repeating or sharing a public domain check.
 
 ## Principles
 
@@ -50,14 +49,18 @@ Run the same checks used by CI before opening a pull request:
 ```bash
 pnpm lint
 pnpm typecheck
+pnpm test
 pnpm build
 ```
 
 ## Project structure
 
 ```text
-src/app/            Next.js application routes, layouts, and styles
-.github/            CI, issue forms, and project automation
+src/app/            Pages, API route, metadata, and global styles
+src/components/     Interactive checkers, generators, and shared UI
+src/lib/            DNS discovery, record parsing, and SVG validation
+src/content/        Source-linked setup guides
+.github/            CI and project automation
 ```
 
 The project uses Next.js, React, TypeScript, Tailwind CSS, and the pnpm package manager. Pull requests receive Vercel preview deployments; merges to `main` deploy to production.
