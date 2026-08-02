@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 64" fill="none">
+  <title>OpenBIMI Orbit B brandmark</title>
+  <desc>The circular letter O followed by two broadcast-shaped bowls forming a visible letter B.</desc>
+  <circle cx="30.5" cy="32" r="23.5" stroke="#3148D8" stroke-width="9.5"/>
+  <path fill="#3148D8" d="M55 7C68 7 77 12.5 77 20C77 27.5 68 33 55 33C62 29.5 65.5 25.3 65.5 20C65.5 14.7 62 10.5 55 7Z"/>
+  <path fill="#3148D8" d="M55 31C68 31 77 36.5 77 44C77 51.5 68 57 55 57C62 53.5 65.5 49.3 65.5 44C65.5 38.7 62 34.5 55 31Z"/>
+</svg>

@@ -10,6 +10,7 @@ import {
   Search,
   Sparkles,
 } from "lucide-react";
+import { BrandMark } from "@/components/brand-mark";
 import { DomainChecker } from "@/components/domain-checker";
 
 const faqs = [
@@ -71,7 +72,7 @@ export default function Home() {
               <span className="tool-number">02</span><div className="tool-icon"><FileCode2 aria-hidden="true" /></div>
               <h3>SVG validator</h3><p>Inspect your logo locally for Tiny PS structure, unsafe content, file size, and inbox compatibility.</p>
               <span className="tool-link">Validate a logo <ArrowRight size={16} aria-hidden="true" /></span>
-              <div className="mini-logo-card" aria-hidden="true"><div className="mini-brand-mark">B</div><span>tiny-ps</span><span>32 KB max</span></div>
+              <div className="mini-logo-card" aria-hidden="true"><div className="mini-brand-mark"><BrandMark /></div><span>tiny-ps</span><span>32 KB max</span></div>
             </Link>
             <Link className="tool-card tool-card--coral" href="/tools/record-generator">
               <span className="tool-number">03</span><div className="tool-icon"><Sparkles aria-hidden="true" /></div>
@@ -102,7 +103,7 @@ export default function Home() {
 
       <section className="truth-section section-pad">
         <div className="container truth-grid">
-          <div className="truth-graphic" aria-hidden="true"><div className="truth-ring"><div className="truth-mark">B</div><span className="orbit-chip orbit-chip--one">DMARC</span><span className="orbit-chip orbit-chip--two">SVG</span><span className="orbit-chip orbit-chip--three">DNS</span></div></div>
+          <div className="truth-graphic" aria-hidden="true"><div className="truth-ring"><div className="truth-mark"><BrandMark /></div><span className="orbit-chip orbit-chip--one">DMARC</span><span className="orbit-chip orbit-chip--two">SVG</span><span className="orbit-chip orbit-chip--three">DNS</span></div></div>
           <div className="truth-copy">
             <p className="eyebrow"><span /> Honest by design</p>
             <h2>A passing record is a signal, <em>not a promise.</em></h2>

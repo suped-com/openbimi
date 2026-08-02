@@ -50,16 +50,12 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 
 .site-header { position: relative; z-index: 100; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--canvas) 94%, transparent); backdrop-filter: blur(18px); }
 .header-inner { display: flex; min-height: 5rem; align-items: center; gap: 2rem; }
-.brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 0.62rem; font-weight: 800; letter-spacing: -0.045em; }
-.brand-mark { position: relative; display: grid; width: 2.12rem; height: 2.12rem; place-items: center; overflow: hidden; border-radius: 50%; background: var(--blue); color: white; }
-.brand-mark::before { position: absolute; inset: 0.23rem; border: 1.5px solid color-mix(in srgb, white 38%, transparent); border-radius: 50%; content: ""; }
-.brand-mark::after { position: absolute; top: 0.42rem; bottom: 0.42rem; left: 0.64rem; width: 0.17rem; border-radius: 1rem; background: white; content: ""; }
-.brand-mark span { position: relative; z-index: 1; transform: translateX(0.08rem); font-size: 1.16rem; font-weight: 850; line-height: 1; }
+.brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 0.58rem; font-weight: 800; letter-spacing: -0.045em; }
+.brand-mark { display: grid; width: 2.5rem; height: 2rem; place-items: center; color: var(--blue); }
+.brand-mark svg { display: block; width: 100%; height: 100%; }
 .brand-name { font-size: 1.28rem; }
 .brand--inverse { color: white; }
-.brand--inverse .brand-mark { background: var(--butter-bright); color: var(--ink); }
-.brand--inverse .brand-mark::before { border-color: color-mix(in srgb, var(--ink) 30%, transparent); }
-.brand--inverse .brand-mark::after { background: var(--ink); }
+.brand--inverse .brand-mark { color: white; }
 .desktop-nav { display: flex; align-items: center; gap: 1.65rem; margin-left: auto; }
 .desktop-nav a { position: relative; color: var(--ink-soft); font-size: 0.86rem; font-weight: 650; }
 .desktop-nav a::after { position: absolute; right: 0; bottom: -0.42rem; left: 0; height: 1px; transform: scaleX(0); transform-origin: right; background: currentColor; content: ""; transition: transform 180ms ease; }
@@ -218,7 +214,8 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .mini-dns-card span { display: flex; align-items: center; gap: 0.45rem; font-family: var(--font-mono), monospace; font-size: 0.57rem; }
 .mini-dns-card i { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--mint); }
 .mini-logo-card { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0.35rem 0.75rem; }
-.mini-brand-mark { grid-row: 1 / 3; display: grid; width: 3.8rem; height: 3.8rem; place-items: center; border-radius: 50%; background: var(--blue); color: white; font-size: 1.8rem; font-weight: 850; }
+.mini-brand-mark { grid-row: 1 / 3; display: grid; width: 4.3rem; height: 3.8rem; place-items: center; color: var(--blue); }
+.mini-brand-mark svg { width: 100%; height: 100%; filter: drop-shadow(0 0.7rem 1rem color-mix(in srgb, var(--blue) 18%, transparent)); }
 .mini-logo-card span { font-family: var(--font-mono), monospace; font-size: 0.58rem; }
 .mini-record-card { display: flex; align-items: center; gap: 0.6rem; overflow: hidden; background: color-mix(in srgb, white 30%, transparent); }
 .mini-record-card small { border-radius: 0.3rem; background: var(--ink); padding: 0.32rem; color: white; font-family: var(--font-mono), monospace; }
@@ -247,7 +244,8 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .truth-ring::before, .truth-ring::after { position: absolute; border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); border-radius: 50%; content: ""; }
 .truth-ring::before { inset: 15%; }
 .truth-ring::after { inset: 32%; }
-.truth-mark { position: relative; z-index: 1; display: grid; width: 7rem; height: 7rem; place-items: center; border-radius: 50%; background: var(--blue); color: white; font-size: 3.4rem; font-weight: 850; box-shadow: 0 1rem 3rem color-mix(in srgb, var(--blue) 30%, transparent); }
+.truth-mark { position: relative; z-index: 1; display: grid; width: 9rem; height: 7.2rem; place-items: center; color: var(--blue); filter: drop-shadow(0 1rem 2rem color-mix(in srgb, var(--blue) 25%, transparent)); }
+.truth-mark svg { width: 100%; height: 100%; }
 .orbit-chip { position: absolute; z-index: 2; border: 1px solid var(--ink); border-radius: 999px; background: var(--canvas); padding: 0.5rem 0.8rem; font-family: var(--font-mono), monospace; font-size: 0.63rem; font-weight: 600; }
 .orbit-chip--one { top: 6%; right: 16%; }
 .orbit-chip--two { right: -1%; bottom: 24%; }
@@ -488,7 +486,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
   .steps-list li > div { grid-template-columns: 1fr; }
   .step-icon { grid-row: auto; }
   .truth-ring { width: 19rem; height: 19rem; }
-  .truth-mark { width: 5.5rem; height: 5.5rem; font-size: 2.5rem; }
+  .truth-mark { width: 7rem; height: 5.6rem; }
   .final-cta-inner { min-height: 19rem; align-items: flex-start; justify-content: center; flex-direction: column; }
   .page-hero { padding-block: 4.5rem; }
   .page-hero h1 { font-size: 3.3rem; }

@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     title: "OpenBIMI — Put your brand in the inbox",
     description: "Free, open tools to set up, validate, and understand BIMI.",
     url: "https://openbimi.com",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "OpenBIMI — Put your brand in the inbox" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "OpenBIMI — Put your brand in the inbox" }],
   },
-  twitter: { card: "summary_large_image", title: "OpenBIMI — Put your brand in the inbox", description: "Free, open tools to set up, validate, and understand BIMI.", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "OpenBIMI — Put your brand in the inbox", description: "Free, open tools to set up, validate, and understand BIMI.", images: ["/opengraph-image"] },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#faf8f1", colorScheme: "light" };
