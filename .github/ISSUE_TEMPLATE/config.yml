@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/suped-com/openbimi/discussions
+    about: Get setup help or discuss an idea before turning it into an issue.
+  - name: Report a security vulnerability
+    url: https://github.com/suped-com/openbimi/security/advisories/new
+    about: Report security problems privately to the maintainers.

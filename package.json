@@ -1,0 +1,53 @@
+{
+  "name": "openbimi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Free, open-source tools to set up, validate, and understand BIMI.",
+  "license": "MIT",
+  "homepage": "https://openbimi.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suped-com/openbimi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/suped-com/openbimi/issues"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "pnpm@11.18.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show-report"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.10.1",
+    "imagetracerjs": "^1.2.6",
+    "lucide-react": "^1.28.0",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tldts": "^7.4.10"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^4.1.10",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^4.1.10"
+  }
+}
