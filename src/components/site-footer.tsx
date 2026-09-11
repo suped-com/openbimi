@@ -21,7 +21,7 @@ export function SiteFooter() {
         <div className="footer-column">
           <p className="footer-label">Learn</p>
           <Link href="/learn">BIMI guides</Link>
-          <Link href="/providers">Provider matrix</Link>
+          <Link href="/providers">Mailbox providers</Link>
           <a href="https://bimigroup.org/implementation-guide/" target="_blank" rel="noreferrer">
             BIMI Group <ArrowUpRight size={13} aria-hidden="true" />
           </a>
@@ -34,10 +34,7 @@ export function SiteFooter() {
           <a href="https://github.com/suped-com/openbimi" target="_blank" rel="noreferrer">
             <Code2 size={14} aria-hidden="true" /> GitHub
           </a>
-          <a href="https://github.com/suped-com/openbimi/discussions">Discussions</a>
           <a href="https://github.com/suped-com/openbimi/blob/main/LICENSE">MIT License</a>
-          <Link href="/open">Open project</Link>
-          <Link href="/status">Status</Link>
         </div>
       </div>
       <div className="container footer-bottom">

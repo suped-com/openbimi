@@ -9,7 +9,7 @@ body:
     attributes:
       label: Before submitting
       options:
-        - label: I searched existing issues and discussions for this idea.
+        - label: I searched existing issues for this idea.
           required: true
   - type: textarea
     id: problem

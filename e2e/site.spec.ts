@@ -12,8 +12,6 @@ const routes = [
   "/learn",
   "/guides",
   "/guides/bimi-setup",
-  "/open",
-  "/status",
   "/privacy",
   "/terms",
   "/security",
@@ -144,13 +142,64 @@ test("header inspector parses its local example", async ({ page }) => {
 test("mobile navigation and provider cards are usable", async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.startsWith("mobile"), "Mobile-only behavior");
   await page.goto("/providers");
-  await expect(page.locator(".provider-mobile-card")).toHaveCount(5);
-  await expect(page.locator(".provider-table-wrap")).toBeHidden();
+  await expect(page.locator(".coverage-mobile-card")).toHaveCount(9);
+  await expect(page.locator(".coverage-table-wrap")).toBeHidden();
   await page.locator('summary[aria-label="Open navigation"]').click();
   await expect(page.locator('summary[aria-label="Close navigation"]')).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Mobile navigation" })).toBeVisible();
   await page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link", { name: "Setup", exact: true }).click();
   await expect(page).toHaveURL(/\/setup$/);
+});
+
+test("certificate choices change the inbox preview and preserve provider differences", async ({ page }) => {
+  await page.goto("/providers");
+  const certificate = page.getByRole("group", { name: "Preview certificate", exact: true });
+  const mailbox = page.getByRole("group", { name: "Preview mailbox", exact: true });
+  const outcome = page.getByRole("status");
+  await expect(page.getByLabel("Gmail verified checkmark")).toBeVisible();
+  await certificate.getByRole("radio", { name: "CMC", exact: true }).check();
+  await expect(page.getByLabel("Example brand logo")).toBeVisible();
+  await expect(page.getByLabel("Gmail verified checkmark")).toHaveCount(0);
+  await expect(outcome).toContainText("reserved for VMCs");
+  await expect(page.getByRole("group", { name: "Certificate option", exact: true }).getByRole("radio", { name: "CMC", exact: true })).toBeChecked();
+  await certificate.getByRole("radio", { name: "No certificate", exact: true }).check();
+  await expect(page.getByLabel("Generic sender initial")).toBeVisible();
+  await expect(outcome).toContainText("No BIMI logo");
+  await mailbox.getByRole("radio", { name: "Yahoo", exact: true }).check();
+  await expect(page.getByLabel("Example brand logo")).toBeVisible();
+  await expect(outcome).toContainText("without a certificate");
+  await mailbox.getByRole("radio", { name: "Outlook", exact: true }).check();
+  await certificate.getByRole("radio", { name: "VMC", exact: true }).check();
+  await expect(outcome).toContainText("No BIMI logo");
+  await expect(page.getByLabel("Generic sender initial")).toBeVisible();
+});
+
+test("provider policies and regional services remain accessible", async ({ page }, testInfo) => {
+  await page.goto("/providers");
+  const comparison = testInfo.project.name.startsWith("mobile") ? page.locator(".coverage-mobile-list") : page.locator(".coverage-table");
+  await comparison.getByText("Display rules for Apple Mail", { exact: true }).click();
+  await expect(comparison.getByText(/Requires a participating provider/)).toBeVisible();
+  await expect(comparison.getByRole("link", { name: "Provider source" })).toHaveAttribute("href", "https://developer.apple.com/support/bimi/");
+  await expect(comparison.getByText("NTT docomo", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Cloudmark", exact: true })).toBeVisible();
+  await expect(page.getByText("Yahoo! Japan", { exact: true })).toBeVisible();
+  for (const logo of await page.locator('img[src*="providers"]').all()) {
+    if (!await logo.isVisible()) continue;
+    await logo.scrollIntoViewIfNeeded();
+    await expect.poll(() => logo.evaluate((image) => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
+});
+
+test("retired pages return 404 and are absent from navigation and sitemap", async ({ page, request }) => {
+  for (const route of ["/open", "/status"]) {
+    const response = await request.get(route);
+    expect(response.status()).toBe(404);
+  }
+  await page.goto("/");
+  await expect(page.locator('a[href="/open"], a[href="/status"], a[href*="/discussions"]')).toHaveCount(0);
+  const sitemap = await request.get("/sitemap.xml");
+  expect(sitemap.ok()).toBeTruthy();
+  expect(await sitemap.text()).not.toMatch(/https:\/\/openbimi\.com\/(open|status)<\/loc>/);
 });
 
 test("representative templates have no serious accessibility violations", async ({ page }, testInfo) => {
