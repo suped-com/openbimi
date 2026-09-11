@@ -69,7 +69,7 @@ The project uses Next.js, React, TypeScript, Tailwind CSS, and the pnpm package 
 
 Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-- Ask usage and design questions in [GitHub Discussions](https://github.com/suped-com/openbimi/discussions).
+- Find setup help in the [BIMI guides](https://openbimi.com/guides).
 - Report reproducible bugs with the [bug report form](https://github.com/suped-com/openbimi/issues/new?template=bug_report.yml).
 - Request features with the [feature request form](https://github.com/suped-com/openbimi/issues/new?template=feature_request.yml).
 - Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).

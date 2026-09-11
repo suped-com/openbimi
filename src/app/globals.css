@@ -655,48 +655,6 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
 .info-link-list { display: flex; flex-wrap: wrap; gap: 0.55rem; }
 .info-link-list a { display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.35rem; border: 1px solid var(--line); border-radius: 999px; background: var(--canvas); padding: 0.65rem 0.8rem; color: var(--blue); font-size: 0.7rem; font-weight: 750; }
 .info-link-list a:hover { border-color: var(--blue); }
-.roadmap-list { display: grid; margin: 0; padding: 0; list-style: none; }
-.roadmap-list li { display: grid; grid-template-columns: 2.3rem 1fr; gap: 0.9rem; border-top: 1px solid var(--line); padding-block: 1rem; }
-.roadmap-list li:last-child { border-bottom: 1px solid var(--line); }
-.roadmap-list li > span { display: grid; width: 2.3rem; height: 2.3rem; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-family: var(--font-mono), monospace; font-size: 0.65rem; }
-.roadmap-list .is-done > span { border-color: var(--green); background: color-mix(in srgb, var(--mint) 42%, white); color: var(--green); }
-.roadmap-list .is-current > span { border-color: var(--blue); background: var(--blue); color: white; }
-.roadmap-list strong { display: block; margin-bottom: 0.2rem; font-size: 0.85rem; }
-.roadmap-list p { margin: 0; color: var(--ink-soft); font-size: 0.72rem; line-height: 1.55; }
-.status-list { border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
-.status-list > div { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.8rem; border-bottom: 1px solid var(--line); padding: 1rem; }
-.status-list > div:last-child { border-bottom: 0; }
-.status-list svg { color: var(--green); }
-.status-list div:nth-last-child(-n+2) svg { color: var(--amber); }
-.status-list span strong { display: block; margin-bottom: 0.15rem; font-size: 0.78rem; }
-.status-list span { color: var(--ink-soft); font-size: 0.65rem; }
-.status-list small { color: var(--ink-soft); font-family: var(--font-mono), monospace; font-size: 0.57rem; text-align: right; }
-.provider-revision { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--blue-soft); padding: 1rem; }
-.provider-revision span, .provider-revision strong { display: block; }
-.provider-revision span { margin-bottom: 0.2rem; color: var(--ink-soft); font-size: 0.58rem; }
-.provider-revision strong { font-family: var(--font-mono), monospace; font-size: 0.65rem; overflow-wrap: anywhere; }
-.provider-revision a, .provider-table a { display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.3rem; color: var(--blue); font-size: 0.67rem; font-weight: 750; }
-.provider-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
-.provider-table { width: 100%; min-width: 62rem; border-collapse: collapse; text-align: left; }
-.provider-table th, .provider-table td { border-bottom: 1px solid var(--line); padding: 0.85rem; vertical-align: top; }
-.provider-table thead { background: var(--ink); color: white; }
-.provider-table thead th { font-family: var(--font-mono), monospace; font-size: 0.57rem; letter-spacing: 0.04em; text-transform: uppercase; }
-.provider-table tbody tr:last-child th, .provider-table tbody tr:last-child td { border-bottom: 0; }
-.provider-table tbody th { width: 10rem; font-size: 0.76rem; }
-.provider-table td { color: var(--ink-soft); font-size: 0.65rem; line-height: 1.5; }
-.provider-status { display: inline-flex; align-items: center; gap: 0.3rem; border-radius: 999px; padding: 0.4rem 0.5rem; font-size: 0.58rem; font-weight: 750; }
-.provider-status--pass { background: color-mix(in srgb, var(--mint) 42%, white); color: var(--green); }
-.provider-status--fail { background: color-mix(in srgb, var(--coral) 15%, white); color: var(--red); }
-.provider-mobile-list { display: none; }
-.provider-mobile-card { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--canvas); box-shadow: var(--shadow-soft); padding: 1.1rem; }
-.provider-mobile-heading { display: grid; gap: 0.65rem; justify-items: start; }
-.provider-mobile-heading h3 { margin: 0; font-size: 1.15rem; }
-.provider-mobile-card dl { display: grid; gap: 0.9rem; margin: 1.1rem 0; }
-.provider-mobile-card dl > div { border-top: 1px solid var(--line); padding-top: 0.8rem; }
-.provider-mobile-card dt { margin-bottom: 0.25rem; color: var(--ink-soft); font-family: var(--font-mono), monospace; font-size: 0.58rem; letter-spacing: 0.04em; text-transform: uppercase; }
-.provider-mobile-card dd { margin: 0; color: var(--ink-soft); font-size: 0.78rem; line-height: 1.6; }
-.provider-mobile-card > a { display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.35rem; color: var(--blue); font-size: 0.76rem; font-weight: 750; }
-
 .site-footer { background: var(--ink); color: white; padding-top: 4.5rem; }
 .footer-grid { display: grid; grid-template-columns: 1.8fr repeat(3, 1fr); gap: 3rem; padding-bottom: 4rem; }
 .footer-intro p { max-width: 22rem; margin: 1.2rem 0 0; color: #aeb3b3; font-size: 0.8rem; line-height: 1.6; }
@@ -755,8 +713,6 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
   .setup-logo-workspace { grid-template-columns: 1fr; }
   .header-inspector { grid-template-columns: 1fr; }
   .info-card-grid--three { grid-template-columns: 1fr; }
-  .provider-table-wrap { display: none; }
-  .provider-mobile-list { display: grid; gap: 0.8rem; }
 }
 
 @media (max-width: 36rem) {
@@ -812,10 +768,8 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
   .setup-verdict { grid-template-columns: 1fr; }
   .header-result-grid, .info-card-grid { grid-template-columns: 1fr; }
   .header-input-panel textarea { min-height: 18rem; }
-  .header-tool-heading, .info-callout, .provider-revision { align-items: flex-start; flex-direction: column; }
+  .header-tool-heading, .info-callout { align-items: flex-start; flex-direction: column; }
   .info-callout .button { width: 100%; }
-  .status-list > div { grid-template-columns: auto 1fr; }
-  .status-list small { grid-column: 2; text-align: left; }
   .footer-legal { justify-content: flex-start; }
   .field input, .domain-input-wrap input, .selector-options input, .fixer-fields input, .header-input-panel textarea { font-size: 1rem; }
 }

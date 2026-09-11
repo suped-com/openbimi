@@ -116,7 +116,7 @@ export default function Home() {
 
       <section className="faq-section section-pad">
         <div className="container faq-grid">
-          <div><p className="eyebrow"><span /> Straight answers</p><h2>Questions, <em>answered.</em></h2><p>Still unsure? Ask in the public project discussion—someone else probably has the same question.</p><a className="text-link" href="https://github.com/suped-com/openbimi/discussions">Open discussions <ArrowRight size={15} aria-hidden="true" /></a></div>
+          <div><p className="eyebrow"><span /> Straight answers</p><h2>Questions, <em>answered.</em></h2><p>From authentication to inbox display, our guides walk you through the parts that matter.</p><Link className="text-link" href="/guides">Explore the guides <ArrowRight size={15} aria-hidden="true" /></Link></div>
           <div className="faq-list">
             {faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}
           </div>

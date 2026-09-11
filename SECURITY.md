@@ -16,7 +16,7 @@ Include, when possible:
 - suggested remediation; and
 - whether the issue is already public or being actively exploited.
 
-Do not open a public issue, discussion, or pull request for an unpatched vulnerability. Do not access data that does not belong to you, disrupt the service, or perform destructive testing.
+Do not open a public issue or pull request for an unpatched vulnerability. Do not access data that does not belong to you, disrupt the service, or perform destructive testing.
 
 We aim to acknowledge a complete report within three business days. We will share updates as triage and remediation progress and will coordinate disclosure with the reporter when appropriate.
 

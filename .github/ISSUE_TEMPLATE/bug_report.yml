@@ -13,7 +13,7 @@ body:
     attributes:
       label: Before submitting
       options:
-        - label: I searched existing issues and discussions for this problem.
+        - label: I searched existing issues for this problem.
           required: true
         - label: I removed credentials and private data from this report.
           required: true

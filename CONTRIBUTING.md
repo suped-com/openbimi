@@ -4,8 +4,8 @@ Thank you for helping make BIMI easier to understand and configure. Contribution
 
 ## Before you start
 
-- Search existing issues and discussions before opening a new one.
-- Use an issue or discussion to propose substantial changes before investing in an implementation.
+- Search existing issues before opening a new one.
+- Use an issue to propose substantial changes before investing in an implementation.
 - Keep pull requests focused. Separate unrelated fixes into separate pull requests.
 - Never commit credentials, private DNS exports, customer data, or other secrets.
 
