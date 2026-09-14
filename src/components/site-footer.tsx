@@ -21,6 +21,8 @@ export function SiteFooter() {
         <div className="footer-column">
           <p className="footer-label">Learn</p>
           <Link href="/learn">BIMI guides</Link>
+          <Link href="/news">BIMI news</Link>
+          <a href="/news/rss.xml">News RSS feed</a>
           <Link href="/supported-inboxes">Supported inboxes</Link>
           <a href="https://bimigroup.org/implementation-guide/" target="_blank" rel="noreferrer">
             BIMI Group <ArrowUpRight size={13} aria-hidden="true" />

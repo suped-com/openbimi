@@ -12,6 +12,7 @@ const links = [
   { href: "/tools/logo", label: "Logo tool" },
   { href: "/supported-inboxes", label: "Supported inboxes" },
   { href: "/learn", label: "Learn" },
+  { href: "/news", label: "News" },
 ];
 
 export function SiteHeader() {

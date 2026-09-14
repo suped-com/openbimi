@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: { default: "OpenBIMI — Free BIMI setup and validation", template: "%s · OpenBIMI" },
   description: "Check a domain, validate SVG Tiny PS logos, generate BIMI records, and learn the standard—free, open source, and without an account.",
   applicationName: "OpenBIMI",
+  alternates: { types: { "application/rss+xml": "https://openbimi.com/news/rss.xml" } },
   openGraph: {
     type: "website",
     siteName: "OpenBIMI",

@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { DomainChecker } from "@/components/domain-checker";
+import { NewsList } from "@/components/news-list";
+import { news } from "@/content/news";
 
 const faqs = [
   ["Is OpenBIMI really free?", "Yes. The checker, record generator, SVG validator, and guides are free and open source. There is no account or usage paywall."],
@@ -120,6 +122,13 @@ export default function Home() {
           <div className="faq-list">
             {faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}
           </div>
+        </div>
+      </section>
+
+      <section className="home-news" aria-labelledby="home-news-heading">
+        <div className="container news-container">
+          <div className="home-news-heading"><h2 id="home-news-heading">Latest BIMI news</h2><Link className="text-link" href="/news">All news <ArrowRight size={15} aria-hidden="true" /></Link></div>
+          <NewsList articles={news.slice(0, 3)} />
         </div>
       </section>
 
