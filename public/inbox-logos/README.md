@@ -7,7 +7,6 @@ Sourced from the [BIMI Group provider directory](https://bimigroup.org/bimi-info
 - `apple.png`: https://bimigroup.org/wp-content/uploads/2021/10/Apple-logo-300x300.png
 - `au.png`: https://bimigroup.org/wp-content/uploads/2024/04/AU_logo.png
 - `comcast.png`: https://bimigroup.org/wp-content/uploads/2021/03/Comcast_Logo.png
-- `cloudmark.png`: https://bimigroup.org/wp-content/uploads/2022/11/cloudmark_logo2.png
 - `fastmail.png`: https://bimigroup.org/wp-content/uploads/2019/12/FM-Logo-RGB-scaled.png
 - `gmail.png`: https://bimigroup.org/wp-content/uploads/2019/12/google-bimi-e1611613203465.png
 - `laposte.png`: https://bimigroup.org/wp-content/uploads/2022/06/La-Poste-Logo-700x394-1-300x169.png
@@ -19,11 +18,4 @@ Sourced from the [BIMI Group provider directory](https://bimigroup.org/bimi-info
 - `zoho.png`: https://bimigroup.org/wp-content/uploads/2024/09/zoho-mail_pacw-300x131.png
 - `zone.png`: https://bimigroup.org/wp-content/uploads/2022/10/zone_ee.png
 - `zoner.png`: https://bimigroup.org/wp-content/uploads/2024/07/zoner-logo02-RGB.png
-- `atmail.png`: https://bimigroup.org/wp-content/uploads/2022/09/at_mail.png
-- `bt.png`: https://bimigroup.org/wp-content/uploads/2021/10/BT_logo_2019.svg_-300x300.png
-- `mailcom.jpg`: https://bimigroup.org/wp-content/uploads/2024/10/Logo_mailcom-300x78.jpg
-- `nifty.avif`: https://bimigroup.org/wp-content/uploads/2025/08/f519rgdqlxcfnkgbcj49.avif
-- `qualitia.png`: https://bimigroup.org/wp-content/uploads/2021/11/Qualitia-300x138.png
-- `seznam.jpg`: https://bimigroup.org/wp-content/uploads/2021/03/seznam-cz-logo.jpg
-- `yahoo-japan.png`: https://bimigroup.org/wp-content/uploads/2021/03/Yahoo_Japan.png
 - `microsoft.jpg`: https://bimigroup.org/wp-content/uploads/2021/03/Microsoft.jpg

@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://openbimi.com";
   const staticRoutes = [
     "", "/setup", "/check", "/tools/logo", "/tools/record", "/tools/headers",
-    "/tools/svg-validator", "/tools/record-generator", "/providers", "/learn", "/guides",
+    "/tools/svg-validator", "/tools/record-generator", "/supported-inboxes", "/learn", "/guides",
     "/privacy", "/terms", "/security",
   ];
   return [
