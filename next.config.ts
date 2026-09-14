@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
+  async redirects() {
+    return [{ source: "/providers", destination: "/supported-inboxes", permanent: true }];
+  },
   async headers() {
     const isDevelopment = process.env.NODE_ENV === "development";
     const scriptSource = isDevelopment

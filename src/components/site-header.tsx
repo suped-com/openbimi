@@ -10,7 +10,7 @@ const links = [
   { href: "/setup", label: "Setup" },
   { href: "/check", label: "Check a domain" },
   { href: "/tools/logo", label: "Logo tool" },
-  { href: "/providers", label: "Providers" },
+  { href: "/supported-inboxes", label: "Supported inboxes" },
   { href: "/learn", label: "Learn" },
 ];
 
