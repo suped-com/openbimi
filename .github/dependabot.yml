@@ -9,6 +9,9 @@ updates:
       timezone: Australia/Sydney
     open-pull-requests-limit: 10
     versioning-strategy: increase
+    # Keep routine releases behind a cooldown; security fixes remain immediate.
+    cooldown:
+      default-days: 3
     labels:
       - dependencies
     ignore:
