@@ -65,6 +65,12 @@ src/content/        Source-linked setup guides
 
 The project uses Next.js, React, TypeScript, Tailwind CSS, and the pnpm package manager. Pull requests receive Vercel preview deployments; merges to `main` deploy to production.
 
+### Dependency updates
+
+Dependabot checks for routine version updates weekly and applies a three-day release cooldown. Security updates bypass that cooldown. CI and Vercel install the committed lockfile with the pnpm version pinned in `package.json`.
+
+`pnpm-workspace.yaml` explicitly sets `minimumReleaseAge: 0`. pnpm 11 otherwise defaults to a 24-hour age check, but Dependabot disables that check when generating security-update lockfiles, including for transitive dependencies. Enforcing it again during installation caused recurring `ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION` failures before tests or builds could run. The routine-update cooldown is not a release-age guarantee for security updates or every transitive dependency. Lockfile integrity checks and the dependency build-script allowlist still apply.
+
 ## Contributing and support
 
 Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
