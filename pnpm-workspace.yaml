@@ -1,3 +1,8 @@
+# Dependabot disables release-age checks for security-update lockfiles, including
+# transitive dependencies. Match that policy so CI and Vercel can install them.
+# Routine version updates have a cooldown in .github/dependabot.yml.
+minimumReleaseAge: 0
+
 allowBuilds:
   sharp: true
   unrs-resolver: true
